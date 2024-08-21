@@ -13,7 +13,7 @@ export function ActionVisualizer({ url }: ActionVisualizerProps) {
   const [actionState, setactionState] = useState<Action | null>(null);
 
   const { adapter } = useActionSolanaWalletAdapter(
-    "https://devnet.helius-rpc.com/?api-key=f51ac02d-ad2a-4a65-8874-dbbdf10182bd"
+    process.env.NEXT_PUBLIC_RPC_URL || "https://api.devnet.solana.com"
   );
   const { action } = useAction({
     url,
