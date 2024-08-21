@@ -1,5 +1,7 @@
 "use client";
-
+import "@dialectlabs/blinks/index.css";
+import { Action, Blink, useAction } from "@dialectlabs/blinks";
+import { useActionSolanaWalletAdapter } from "@dialectlabs/blinks/hooks/solana";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { SolanaQRCode } from "@/components/qr-code";
 import { Button } from "@/components/ui/button";
@@ -7,11 +9,12 @@ import Link from "next/link";
 import { useEffect, useState } from "react";
 import { DevnetAlert } from "@/components/devnet-alert";
 import { siteConfig } from "@/lib/constants";
+import { ActionVisualizer } from "@/components/ActionVisualizer";
 
 export default function Pages() {
   const apiPath = "/api/actions/memo";
+  const [actionState, setactionState] = useState<Action | null>(null);
   const [apiEndpoint, setApiEndpoint] = useState("");
-
   useEffect(() => {
     setApiEndpoint(new URL(apiPath, window.location.href).toString());
 
@@ -39,16 +42,18 @@ export default function Pages() {
         </p>
       </div>
 
-      <Card className="group-hover:border-primary max-w-[80vw] md:max-w-[400px] aspect-square rounded overflow-clip text-center flex items-center justify-center mx-auto">
-        <SolanaQRCode
-          url={apiPath}
-          color="white"
-          background="black"
-          size={400}
-          className="rounded-lg aspect-square [&>svg]:scale-75 md:[&>svg]:scale-100"
-        />
-      </Card>
-
+      {/* <div className="flex gap-6 items-center">
+        <Card className="group-hover:border-primary max-w-[80vw] md:max-w-[400px] aspect-square rounded overflow-clip text-center flex items-center justify-center mx-auto">
+          <SolanaQRCode
+            url={apiPath}
+            color="white"
+            background="black"
+            size={400}
+            className="rounded-lg aspect-square [&>svg]:scale-75 md:[&>svg]:scale-100"
+          />
+        </Card>
+      </div> */}
+      {apiEndpoint && <ActionVisualizer {...{ url: apiEndpoint }} />}
       <div className="mx-auto text-center md:max-w-[58rem]">
         <p className="leading-normal text-muted-foreground sm:text-lg sm:leading-7">
           View the{" "}
