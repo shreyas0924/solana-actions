@@ -1,7 +1,7 @@
 import {
   DEFAULT_STAKE_AMOUNT,
   DEFAULT_VALIDATOR_VOTE_PUBKEY,
-} from "@/constants";
+} from "@/lib/constants";
 import {
   ActionGetResponse,
   ActionPostRequest,
