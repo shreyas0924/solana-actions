@@ -4,6 +4,11 @@ export const DEFAULT_VALIDATOR_VOTE_PUBKEY: PublicKey = new PublicKey(
   "5ZWgXcyqrrNpQHCme5SdC5hCeYb2o3fEJhF7Gok3bTVN"
 );
 
+export const DEFAULT_SOL_ADDRESS: PublicKey = new PublicKey(
+  "8PkvQK3F15kwGvqLMJVbCT1gvSitDDb7bvVCwVgWw58w"
+);
+
+export const DEFAULT_SOL_AMOUNT: number = 1.0;
 export const DEFAULT_STAKE_AMOUNT: number = 1.0;
 
 export const siteConfig = {

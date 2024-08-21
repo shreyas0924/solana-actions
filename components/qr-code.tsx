@@ -24,7 +24,7 @@ export function SolanaQRCode({
       {
         link: new URL(url, window.location.href),
       },
-      "solana:",
+      "solana:"
     );
 
     console.log("encodedUrl:", encodedUrl.toString());
