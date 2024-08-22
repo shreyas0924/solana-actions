@@ -13,8 +13,6 @@ import {
 } from "@solana/wallet-adapter-react-ui";
 import { clusterApiUrl } from "@solana/web3.js";
 import { ThemeProvider } from "@/components/theme-provider";
-import { MainNav } from "@/components/navbar";
-import { Button } from "@/components/ui/button";
 import Link from "next/link";
 import { siteConfig } from "@/lib/constants";
 import { cn } from "@/lib/utils";
@@ -53,10 +51,10 @@ export const Providers = ({ children }: { children: React.ReactNode }) => {
                     {siteConfig.name}
                   </span>
                 </Link>
-                <nav className="flex items-center gap-2">
+                <div className="flex justify-center items-center gap-2">
                   <WalletMultiButton />
                   <ModeToggle />
-                </nav>
+                </div>
               </header>
               <div
                 className={cn(

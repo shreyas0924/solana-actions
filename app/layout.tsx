@@ -6,7 +6,6 @@ import Link from "next/link";
 import { cn } from "@/lib/utils";
 import { Button, buttonVariants } from "@/components/ui/button";
 import { ThemeProvider } from "@/components/theme-provider";
-import { MainNav } from "@/components/navbar";
 import { siteConfig } from "@/lib/constants";
 import { ModeToggle } from "@/components/mode-toggle";
 import { Providers } from "./providers";
