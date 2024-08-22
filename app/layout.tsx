@@ -20,7 +20,7 @@ export const viewport: Viewport = {
 };
 
 export const metadata: Metadata = {
-  title: "Solana Actions and Blinks - Sample Code Snippets",
+  title: "Solana Actions and Blinks ",
   description: "",
 };
 

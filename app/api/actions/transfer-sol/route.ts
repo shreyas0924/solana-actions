@@ -29,8 +29,8 @@ export const GET = async (req: Request) => {
 
     const payload: ActionGetResponse = {
       title: "Actions Example - Transfer Native SOL",
-      icon: new URL("/vercel.svg", requestUrl.origin).toString(),
-      description: "Transfer SOL to another Solana wallet",
+      icon: new URL("/send-image.png", requestUrl.origin).toString(),
+      description: `Transfer SOL to ${DEFAULT_SOL_ADDRESS}`,
       label: "Transfer",
       links: {
         actions: [

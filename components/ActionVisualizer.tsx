@@ -4,6 +4,7 @@ import { Action, Blink, useAction } from "@dialectlabs/blinks";
 import { useEffect, useState } from "react";
 import "@dialectlabs/blinks/index.css";
 import { useActionSolanaWalletAdapter } from "@dialectlabs/blinks/hooks/solana";
+import { useTheme } from "next-themes";
 
 type ActionVisualizerProps = {
   url: string;
@@ -11,7 +12,8 @@ type ActionVisualizerProps = {
 
 export function ActionVisualizer({ url }: ActionVisualizerProps) {
   const [actionState, setactionState] = useState<Action | null>(null);
-
+  const { theme } = useTheme();
+  //Devnet only for now
   const { adapter } = useActionSolanaWalletAdapter(
     process.env.NEXT_PUBLIC_RPC_URL || "https://api.devnet.solana.com"
   );
@@ -24,10 +26,14 @@ export function ActionVisualizer({ url }: ActionVisualizerProps) {
     setactionState(action);
   }, [action]);
   return actionState ? (
-    <Blink
-      action={actionState as Action}
-      websiteText={new URL(url).hostname}
-      stylePreset="x-dark"
-    />
-  ) : null;
+    <div className="md:w-1/2 w-full mx-auto">
+      <Blink
+        action={actionState as Action}
+        websiteText={new URL(url).hostname}
+        stylePreset={theme === "dark" ? "x-dark" : "x-light"}
+      />
+    </div>
+  ) : (
+    <div>{`Loading....`}</div>
+  );
 }

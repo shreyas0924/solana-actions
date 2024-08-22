@@ -21,7 +21,7 @@ const headers = createActionHeaders();
 export const GET = (req: Request) => {
   const payload: ActionGetResponse = {
     description: "This is an action",
-    icon: new URL("/vercel.svg", new URL(req.url).origin).toString(),
+    icon: new URL("/send-image.png", new URL(req.url).origin).toString(),
     label: "Send Memo",
     title: "Memo Demo",
     disabled: false,

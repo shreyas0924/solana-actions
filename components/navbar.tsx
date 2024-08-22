@@ -25,19 +25,12 @@ export function MainNav({ items, children }: MainNavProps) {
 
   return (
     <div className="flex gap-6 md:gap-10">
-      <Link
-        href="/"
-        className="hidden text-lg items-center space-x-2 md:flex hover:underline underline-offset-4"
-      >
-        <span className="hidden font-bold sm:inline-block">
-          {siteConfig.name}
-        </span>
-      </Link>
+      
 
       {items?.length ? (
         <nav className="hidden gap-2 md:flex">
           {items?.map((item, key) => (
-            <Button key={key} variant={"link"} asChild>
+            <Button key={key} variant={"link"}>
               <Link
                 href={item.disabled ? "#" : item.href}
                 className={cn(

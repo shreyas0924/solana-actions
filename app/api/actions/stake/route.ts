@@ -57,7 +57,7 @@ export const GET = async (req: Request) => {
   try {
     const payload: ActionGetResponse = {
       title: "Stake SOL",
-      icon: new URL("/vercel.svg", new URL(req.url).origin).toString(),
+      icon: new URL("/send-image.png", new URL(req.url).origin).toString(),
       label: "Stake your SOL",
       description: `Stake your SOL to the validator: ${validator.toBase58()}`,
       links: {

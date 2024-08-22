@@ -6,10 +6,11 @@ import { Button } from "@/components/ui/button";
 import Link from "next/link";
 import { useEffect, useState } from "react";
 import { DevnetAlert } from "@/components/devnet-alert";
+import { siteConfig } from "@/lib/constants";
 import { ActionVisualizer } from "@/components/ActionVisualizer";
 
-export default function Memo() {
-  const apiPath = "/api/actions/memo";
+export default function Stake() {
+  const apiPath = "/api/actions/stake";
   const [apiEndpoint, setApiEndpoint] = useState("");
   useEffect(() => {
     setApiEndpoint(new URL(apiPath, window.location.href).toString());
@@ -30,11 +31,11 @@ export default function Memo() {
 
       <div className="mx-auto flex max-w-[58rem] flex-col items-center space-y-6 text-center">
         <h2 className="font-heading text-3xl leading-[1.1] sm:text-3xl md:text-6xl">
-          Simple Memo
+          Stake SOL
         </h2>
         <p className="max-w-[85%] leading-normal text-muted-foreground sm:text-lg sm:leading-7">
-          The following example demonstrates how to publish a simple message
-          on-chain using an Action and the SPL Memo program.
+          The following example demonstrates how to stake SOL to a validator
+          using an Action and the SPL Stake program.
         </p>
       </div>
 

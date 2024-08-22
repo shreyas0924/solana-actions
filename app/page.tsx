@@ -32,7 +32,7 @@ const actionCards: Array<{
   },
   {
     title: "Transfer Native SOL",
-    href: "/transfer-sol",
+    href: "/transfer",
     description: "Easily transfer native SOL to any other Solana wallet.",
     icon: <WalletIcon className="size-12" />,
   },
@@ -56,19 +56,9 @@ export default async function Pages() {
     <section
       id="features"
       className={
-        "container space-y-12 bg-slate-50 py-8 dark:bg-transparent md:py-12 lg:py-24"
+        "container space-y-12  py-8 dark:bg-transparent md:py-12 lg:py-24"
       }
     >
-      <div className="mx-auto flex max-w-[58rem] flex-col items-center space-y-6 text-center">
-        <h2 className="font-heading text-3xl leading-[1.1] sm:text-3xl md:text-6xl">
-          Example Solana Actions
-        </h2>
-        <p className="max-w-[85%] leading-normal text-muted-foreground sm:text-lg sm:leading-7">
-          This project contains examples code snippets for creating Solana
-          Actions.
-        </p>
-      </div>
-
       <div className="mx-auto grid justify-center gap-4 sm:grid-cols-2 md:max-w-[64rem] md:grid-cols-3">
         {actionCards.map((item, key) => (
           <Link key={key} href={item.href} className="group">
@@ -87,18 +77,6 @@ export default async function Pages() {
             </Card>
           </Link>
         ))}
-      </div>
-
-      <div className="mx-auto text-center md:max-w-[58rem]">
-        <p className="leading-normal text-muted-foreground sm:text-lg sm:leading-7">
-          You can find the{" "}
-          <Button variant={"link"} asChild>
-            <Link href={siteConfig.links.github} target="_blank">
-              full source code
-            </Link>
-          </Button>{" "}
-          for this entire repo on GitHub.
-        </p>
       </div>
     </section>
   );

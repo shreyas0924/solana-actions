@@ -44,17 +44,19 @@ export const Providers = ({ children }: { children: React.ReactNode }) => {
         <WalletModalProvider>
           <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
             <div className="flex min-h-screen flex-col">
-              <header className="container z-40 bg-background">
-                <div className="flex h-20 items-center justify-between py-6">
-                  <MainNav />
-                  <nav className="flex items-center gap-2">
-                    <Link target="_blank" href={siteConfig.links.docs}>
-                      <Button>Read the Docs</Button>
-                    </Link>
-                    <WalletMultiButton />
-                    <ModeToggle />
-                  </nav>
-                </div>
+              <header className="flex justify-between items-center my-5  container z-40 bg-background">
+                <Link
+                  href="/"
+                  className="text-lg items-center space-x-2 md:flex hover:underline underline-offset-4"
+                >
+                  <span className=" font-bold sm:inline-block">
+                    {siteConfig.name}
+                  </span>
+                </Link>
+                <nav className="flex items-center gap-2">
+                  <WalletMultiButton />
+                  <ModeToggle />
+                </nav>
               </header>
               <div
                 className={cn(
